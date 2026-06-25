@@ -42,6 +42,10 @@ body {
   overflow-x: hidden;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -63,6 +67,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: clamp(0.7rem, 2vw, 1.4rem);
   padding: 0.8rem var(--side-space);
   color: #fffaf0;
   transition: background 220ms ease, color 220ms ease, box-shadow 220ms ease, backdrop-filter 220ms ease;
@@ -118,6 +123,7 @@ button {
   display: flex;
   align-items: center;
   gap: clamp(1rem, 2.4vw, 2.2rem);
+  margin-left: auto;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -148,9 +154,7 @@ button {
 }
 
 .nav-toggle {
-  position: fixed;
-  top: 1.1rem;
-  right: var(--side-space);
+  position: relative;
   z-index: 25;
   display: grid;
   place-items: center;
@@ -161,14 +165,152 @@ button {
   border-radius: 50%;
   background: transparent;
   color: inherit;
+  cursor: pointer;
+  transition: background 180ms ease, transform 180ms ease;
 }
 
 .nav-toggle span {
+  position: absolute;
   display: block;
   width: 1rem;
   height: 1px;
-  margin: 0.25rem auto;
   background: currentColor;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.nav-toggle span:first-child {
+  transform: translateY(-4px);
+}
+
+.nav-toggle span:last-child {
+  transform: translateY(4px);
+}
+
+.nav-toggle[aria-expanded="true"] span:first-child {
+  transform: rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:last-child {
+  transform: rotate(-45deg);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.header-buy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 5.6rem;
+  min-height: 2.38rem;
+  padding: 0.62rem 0.92rem;
+  border: 1px solid rgba(255, 250, 240, 0.34);
+  border-radius: 999px;
+  background: rgba(31, 122, 77, 0.92);
+  color: #fffaf0;
+  cursor: pointer;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  white-space: nowrap;
+  text-transform: uppercase;
+  box-shadow: 0 10px 26px rgba(20, 84, 56, 0.2);
+  backdrop-filter: blur(10px);
+  transition: background 180ms ease, transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.header-buy:hover {
+  background: var(--color-olive-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(20, 84, 56, 0.28);
+}
+
+.site-header.is-scrolled .header-buy,
+.site-header.is-open .header-buy {
+  border-color: rgba(20, 84, 56, 0.18);
+  background: var(--color-olive);
+}
+
+.order-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 2rem);
+  background: rgba(42, 30, 22, 0.52);
+  backdrop-filter: blur(10px);
+}
+
+.order-modal[hidden] {
+  display: none;
+}
+
+.order-dialog {
+  position: relative;
+  width: min(100%, 680px);
+  max-height: min(86svh, 720px);
+  overflow-y: auto;
+  padding: clamp(1.35rem, 4vw, 2.4rem);
+  border: 1px solid rgba(210, 203, 193, 0.82);
+  border-radius: var(--radius);
+  background-color: var(--color-card);
+  background-image: var(--paper-marble);
+  background-size: 680px 680px;
+  box-shadow: 0 30px 90px rgba(31, 24, 19, 0.28);
+}
+
+.order-dialog h2 {
+  padding-right: 2rem;
+}
+
+.order-dialog p:not(.eyebrow) {
+  max-width: 56ch;
+  margin: 1rem 0 0;
+  color: var(--color-muted);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid rgba(75, 51, 38, 0.22);
+  border-radius: 50%;
+  background: rgba(247, 245, 240, 0.72);
+  cursor: pointer;
+}
+
+.modal-close::before,
+.modal-close::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.95rem;
+  height: 1px;
+  background: var(--color-ink);
+  content: "";
+}
+
+.modal-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.modal-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.modal-cta-row {
+  display: flex;
+  gap: 0.85rem;
+  margin-top: 1.65rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(127, 93, 66, 0.2);
 }
 
 @media (min-width: 901px) {
@@ -202,8 +344,9 @@ button {
 }
 
 .hero-shade {
-  background: rgba(38, 30, 24, 0.48);
-  box-shadow: inset 55vw 0 42vw rgba(31, 24, 19, 0.45), inset 0 -22vh 20vh rgba(31, 24, 19, 0.34);
+  background:
+    radial-gradient(ellipse at 10% 82%, rgba(31, 24, 19, 0.82) 0%, rgba(31, 24, 19, 0.62) 28%, rgba(31, 24, 19, 0.24) 52%, rgba(31, 24, 19, 0.04) 76%),
+    linear-gradient(45deg, rgba(31, 24, 19, 0.48) 0%, rgba(31, 24, 19, 0.18) 35%, rgba(31, 24, 19, 0.02) 70%);
 }
 
 .hero-content {
@@ -982,6 +1125,30 @@ blockquote cite {
 }
 
 @media (max-width: 900px) {
+  .site-header {
+    gap: 0.65rem;
+  }
+
+  .brand {
+    margin-right: auto;
+  }
+
+  .header-actions {
+    order: 2;
+  }
+
+  .nav-toggle {
+    order: 3;
+  }
+
+  .header-buy {
+    min-width: 5.2rem;
+    min-height: 2.28rem;
+    padding-right: 0.78rem;
+    padding-left: 0.78rem;
+    font-size: 0.62rem;
+  }
+
   .nav-toggle {
     border-color: rgba(255, 250, 240, 0.65);
     background: rgba(75, 51, 38, 0.52);
@@ -1004,10 +1171,15 @@ blockquote cite {
     background: rgba(247, 245, 240, 0.96);
     color: var(--color-ink);
     box-shadow: var(--shadow-soft);
+    opacity: 0;
+    transform: translateY(-0.45rem);
+    transition: opacity 180ms ease, transform 180ms ease;
   }
 
   .main-nav.is-open {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .main-nav a {
@@ -1070,8 +1242,9 @@ blockquote cite {
   }
 
   .hero-shade {
-    background: rgba(38, 30, 24, 0.42);
-    box-shadow: inset 0 -62vh 38vh rgba(31, 24, 19, 0.62);
+    background:
+      radial-gradient(ellipse at 12% 88%, rgba(31, 24, 19, 0.86) 0%, rgba(31, 24, 19, 0.66) 34%, rgba(31, 24, 19, 0.24) 62%, rgba(31, 24, 19, 0.04) 82%),
+      linear-gradient(15deg, rgba(31, 24, 19, 0.42) 0%, rgba(31, 24, 19, 0.14) 54%, rgba(31, 24, 19, 0.02) 78%);
   }
 
   .offer-card-duo {
@@ -1095,6 +1268,24 @@ blockquote cite {
     gap: 0.55rem;
     font-size: 0.68rem;
     letter-spacing: 0.08em;
+  }
+
+  .brand-logo {
+    width: 2.45rem;
+    height: 2.45rem;
+  }
+
+  .header-buy {
+    min-width: 4.9rem;
+    min-height: 2.18rem;
+    padding: 0.56rem 0.66rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
+  }
+
+  .nav-toggle {
+    width: 2.35rem;
+    height: 2.35rem;
   }
 
   h1 {
@@ -1124,6 +1315,10 @@ blockquote cite {
   .main-nav {
     right: 1rem;
     left: 1rem;
+  }
+
+  .modal-cta-row {
+    flex-direction: column;
   }
 
   .product-card.is-expanded {
