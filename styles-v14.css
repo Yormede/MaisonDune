@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --paper: #f7efe8;
   --paper-soft: #fbf6f1;
   --paper-warm: #eadfd4;
@@ -182,9 +182,9 @@ a {
   align-items: stretch;
   aspect-ratio: 16 / 7.1;
   height: auto;
-  min-height: 560px;
+  /* min-height: 560px;
   max-height: 80vh;
-  max-height: 80svh;
+  max-height: 80svh; */
   padding-top: 6.1rem;
   background-color: var(--paper);
   overflow: hidden;
@@ -1007,7 +1007,26 @@ h1 {
     letter-spacing: 0.16em;
   }
 
+  .header-button {
+    display: flex;
+    justify-content: space-around;
+  }
+
   .mobile-buy-link {
+    display: block;
+    min-height: 0;
+    margin-right: 0.65rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font: 700 0.76rem/1 var(--serif);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  /* .mobile-buy-link {
     display: inline-flex;
     grid-column: 2;
     grid-row: 1;
@@ -1022,13 +1041,12 @@ h1 {
     font: 700 0.76rem/1 var(--serif);
     letter-spacing: 0.12em;
     text-transform: uppercase;
-  }
+  } */
 
   .nav-toggle {
-    position: absolute;
+    position: relative;
     z-index: 3;
     top: 50%;
-    right: var(--side);
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
@@ -1320,7 +1338,7 @@ h1 {
   }
 
   .mobile-buy-link {
-    margin-right: 0.45rem;
+    margin-right: 15px;
     font-size: 0.64rem;
     letter-spacing: 0.08em;
   }
@@ -1380,4 +1398,19 @@ h1 {
     max-height: 60vh;
     max-height: 60svh;
   }
+}
+
+p.eyebrow {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto 1.45rem;
+  padding-bottom: 0.72rem;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--gold-line);
 }
