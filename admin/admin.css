@@ -1,0 +1,306 @@
+﻿/* Admin Maison Dune — aligned with front DA */
+:root {
+  --paper: #f7efe8;
+  --paper-soft: #fbf6f1;
+  --panel: #fffaf5;
+  --ink: #4a4639;
+  --muted: #6a6356;
+  --line: rgba(95, 72, 52, 0.16);
+  --line-strong: rgba(212, 175, 55, 0.55);
+  --gold: #d4a017;
+  --gold-light: rgba(212, 160, 23, 0.08);
+  --accent: #3d372f;
+  --danger: #8b2f28;
+  --success: #2d6a4f;
+  --serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --sans: "Inter", system-ui, -apple-system, sans-serif;
+  --radius: 4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.admin-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Login ─────────────────────────── */
+.login-panel {
+  width: min(100% - 2rem, 440px);
+  margin: auto;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  box-shadow: 0 20px 60px rgba(61, 51, 40, 0.06);
+}
+
+.login-panel h1 {
+  margin: 0 0 0.5rem;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 8vw, 2.8rem);
+  line-height: 1.05;
+  color: var(--ink);
+}
+
+.login-panel .eyebrow {
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--gold);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.login-panel .muted {
+  margin: 0.75rem 0 1.5rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.login-panel form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.login-panel label {
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.login-panel input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  background: #fffdf9;
+  color: var(--ink);
+  font-size: 1rem;
+  font-family: var(--sans);
+  transition: border-color 0.15s;
+}
+.login-panel input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.login-panel button {
+  width: 100%;
+  padding: 0.85rem;
+  border: none;
+  background: var(--accent);
+  color: #fffaf3;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.login-panel button:hover { opacity: 0.88; }
+
+.status {
+  min-height: 1.25rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.status.is-error { color: var(--danger); }
+
+/* ── Editor ────────────────────────── */
+.editor-panel {
+  flex: 1;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.editor-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.editor-header h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  line-height: 1.1;
+}
+
+.editor-header .eyebrow {
+  display: inline-block;
+  margin: 0 0 0.35rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid var(--gold);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.header-actions a,
+.header-actions button {
+  padding: 0.6rem 1.1rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+.header-actions button:hover { background: var(--gold-light); border-color: var(--gold); }
+
+/* ── Content form ──────────────────── */
+.content-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.content-form fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 1.15rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.content-form legend {
+  padding: 0 0.5rem;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--ink);
+}
+
+.content-form label {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.content-form input,
+.content-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--line);
+  background: #fffdf9;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-family: var(--sans);
+  transition: border-color 0.15s;
+}
+.content-form input:focus,
+.content-form textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.content-form textarea {
+  min-height: 6rem;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+/* ── Image fields ──────────────────── */
+.image-field {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+}
+.image-field img {
+  width: min(100%, 200px);
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+/* ── Save bar ──────────────────────── */
+.save-bar {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.5rem -0.5rem -0.5rem;
+  padding: 1rem 1.25rem;
+  background: rgba(247, 239, 232, 0.95);
+  border-top: 2px solid var(--line-strong);
+  backdrop-filter: blur(12px);
+}
+
+.save-bar button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background: var(--accent);
+  color: #fffaf3;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.save-bar button:hover { opacity: 0.88; }
+
+/* ── Responsive ────────────────────── */
+@media (min-width: 600px) {
+  .content-form fieldset {
+    padding: 1.35rem;
+  }
+  .image-field {
+    grid-template-columns: 160px 1fr;
+    align-items: start;
+  }
+}
+
+@media (min-width: 900px) {
+  .admin-shell {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .content-form > fieldset {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .content-form > fieldset > legend {
+    grid-column: 1 / -1;
+  }
+}
