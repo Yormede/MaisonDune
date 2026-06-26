@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Maison Dune</title>
+    <link rel="stylesheet" href="/admin/admin.css" />
+  </head>
+  <body>
+    <main class="admin-shell">
+      <section class="login-panel" data-login-panel>
+        <p class="eyebrow">Maison Dune</p>
+        <h1>Administration</h1>
+        <p class="muted">Connecte-toi pour modifier les textes, prix, liens et images de la vitrine.</p>
+        <form data-login-form>
+          <label>
+            Mot de passe
+            <input type="password" name="password" autocomplete="current-password" required />
+          </label>
+          <button type="submit">Se connecter</button>
+        </form>
+        <p class="status" data-login-status></p>
+      </section>
+
+      <section class="editor-panel" data-editor-panel hidden>
+        <header class="editor-header">
+          <div>
+            <p class="eyebrow">CMS léger</p>
+            <h1>Contenu du site</h1>
+          </div>
+          <div class="header-actions">
+            <a href="/" target="_blank" rel="noreferrer">Voir le site</a>
+            <button type="button" data-logout>Déconnexion</button>
+          </div>
+        </header>
+
+        <p class="muted">
+          Les images importées ici sont converties en WebP avant l'upload. Clique sur sauvegarder pour publier les changements.
+        </p>
+
+        <form class="content-form" data-content-form></form>
+
+        <footer class="save-bar">
+          <p class="status" data-editor-status></p>
+          <button type="button" data-save>Enregistrer les changements</button>
+        </footer>
+      </section>
+    </main>
+
+    <script src="/admin/admin.js"></script>
+  </body>
+</html>

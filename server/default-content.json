@@ -1,0 +1,152 @@
+{
+  "site": {
+    "title": "Maison Dune | Extraits de Parfum à Lyon",
+    "description": "Maison Dune, extraits de parfum 50ml inspirés de Grasse. Edition 0 disponible à Lyon et alentours, parfums à 20€, pack triple à 50€ et livraison via Vinted."
+  },
+  "links": {
+    "instagram": "https://www.instagram.com/maison.dune_signature/",
+    "vinted": "https://www.vinted.fr/member/3130060906-maisondune1"
+  },
+  "images": {
+    "hero": "./assets/hero-patio-v8.webp",
+    "story": "./assets/rawan-water-story-v2.webp",
+    "logo": "./assets/logo-maison-dune.webp",
+    "logoMark": "./assets/logo-mark-maison-dune.webp"
+  },
+  "nav": {
+    "left": [
+      "La Maison",
+      "Parfums",
+      "Savoir-faire"
+    ],
+    "right": [
+      "Avis",
+      "Acheter",
+      "Contact"
+    ]
+  },
+  "hero": {
+    "eyebrow": "Série inaugurale",
+    "title": "Les souvenirs ont une odeur.",
+    "copyPrimary": "Maison Dune crée des parfums inspirés par les lieux, les émotions et les instants qui nous accompagnent longtemps après leur passage.",
+    "copySecondary": "Façonnées à Grasse, nos créations donnent forme à ces souvenirs.",
+    "line": "Artisanal, français, Grasse",
+    "body": "Edition 0. Un prix fondateur, réservé à cette première série, pour découvrir des extraits de parfum 50ml à Lyon avant le déploiement officiel de la maison.",
+    "primaryCta": "Découvrir",
+    "secondaryCta": "Lire l'histoire"
+  },
+  "products": [
+    {
+      "id": "rawan",
+      "name": "Rawan",
+      "subtitle": "le patio doré",
+      "price": "20€",
+      "image": "./assets/product-rawan-v8.webp",
+      "description": "Oriental, chaud, enveloppant. Ciste d'Espagne, orange, ambre et vanille dessinent un sillage dense, doux et solaire.",
+      "notes": {
+        "head": "Ciste d'Espagne, orange",
+        "heart": "Lavande, benjoin de Siam",
+        "base": "Ambre, vanille, fève de tonka, musc, cèdre"
+      }
+    },
+    {
+      "id": "trace",
+      "name": "Trace",
+      "subtitle": "le jardin des vergers",
+      "price": "20€",
+      "image": "./assets/product-trace-v8.webp",
+      "description": "Un fruité lumineux, moderne et addictif. Une signature qui laisse une empreinte.",
+      "notes": {
+        "head": "Framboise, fraise, cerise, mandarine",
+        "heart": "Cassis, pamplemousse",
+        "base": "Musc, patchouli"
+      }
+    },
+    {
+      "id": "mirage",
+      "name": "Mirage",
+      "subtitle": "l'oasis interdite",
+      "price": "20€",
+      "image": "./assets/product-mirage-v8.webp",
+      "description": "Déjà mis en flacon, bientôt ouvert à la réservation. Une exploration plus sombre autour du bois de oud.",
+      "notes": {
+        "head": "Fruit de la passion, notes fruitées, safran, rose de Turquie",
+        "heart": "Oud, benjoin, feuille de patchouli d'Indonésie",
+        "base": "Cuir, bois d'Akigala, ambre, vanille, ciste"
+      }
+    }
+  ],
+  "offer": {
+    "title": "Pack triple 50€",
+    "text": "Panachage possible des parfums, selon les flacons disponibles.",
+    "cta": "Commander"
+  },
+  "story": {
+    "title": "Une maison de souvenirs.",
+    "paragraphs": [
+      "Maison Dune est née du désir de préserver les instants qui nous marquent et ne nous quittent jamais.",
+      "Chaque création s'inspire d'un souvenir, d'une lumière ou d'un lieu. Des patios baignés de soleil aux jardins méditerranéens, nos parfums traduisent des émotions en fragrances.",
+      "Façonnées à Grasse, berceau de la parfumerie française, nos créations sont pensées pour accompagner le quotidien avec élégance et simplicité.",
+      "Parce que les souvenirs ont une odeur."
+    ],
+    "caption": "Une première série portée, testée, photographiée par les premiers initiés."
+  },
+  "testimonials": [
+    {
+      "quote": "Les senteurs sont très agréables, avec une belle tenue. J'ai eu uniquement des retours positifs de la part des personnes qui les ont sentis sur moi.",
+      "author": "Jacem, client vérifié"
+    },
+    {
+      "quote": "Nickel, je l'ai mis aujourd'hui, il dure bien toute la journée. Discret, pas trop fort.",
+      "author": "Mehdi, client vérifié"
+    },
+    {
+      "quote": "Un coup de coeur pour TRACE. Le packaging, l'odeur fruitée, le nom... vraiment une belle idée de cadeau à offrir ou à s'offrir.",
+      "author": "Anonyme"
+    }
+  ],
+  "roadmap": {
+    "kicker": "Chemin",
+    "title": "Ce qui reste, ce qui vient.",
+    "intro": "Une première série pour ouvrir la maison. Puis une suite plus libre, plus rare, plus affirmée.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Naissance",
+        "text": "Une idée simple, des matières justes, un sillage sans bruit inutile."
+      },
+      {
+        "number": "02",
+        "title": "Edition 0",
+        "text": "Rawan et Trace ouvrent la première série, au prix fondateur de la maison."
+      },
+      {
+        "number": "03",
+        "title": "Mirage arrive",
+        "text": "Mirage est déjà là, encore discret, bientôt ouvert à la réservation."
+      },
+      {
+        "number": "04",
+        "title": "Après Dune",
+        "text": "La suite ira plus loin, avec des créations plus rares, plus libres et plus nettes."
+      }
+    ]
+  },
+  "contact": {
+    "kicker": "",
+    "title": "Réserver un flacon.",
+    "text": "La série inaugurale ne sera pas reproduite à l'identique. Pour réserver un flacon, poser une question ou choisir le coffret, contactez Maison Dune sur Instagram. Remise en main propre à Lyon et alentours, pour une livraison, l'achat peut se faire via Vinted.",
+    "instagramCta": "DM Instagram",
+    "vintedCta": "Livraison via Vinted",
+    "legal": "Retours possibles sous 14 jours uniquement pour les flacons non ouverts et scellés. Dès ouverture du flacon, le retour n'est plus possible."
+  },
+  "footer": {
+    "kicker": "Allocation fondatrice",
+    "title": "Entrer dans la première série.",
+    "text": "Entrer maintenant, c'est rejoindre la maison avant la suite.",
+    "primaryCta": "DM Instagram",
+    "secondaryCta": "Revoir la collection",
+    "bottomLeft": "",
+    "bottomRight": "Artisanal, français, Grasse."
+  }
+}
