@@ -63,7 +63,7 @@ a {
   padding: 0 clamp(1.6rem, 3vw, 4rem);
   background: rgba(250, 245, 239, 0.94);
   border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
   overflow: visible;
 }
 
@@ -184,7 +184,7 @@ a {
   height: auto;
   /* min-height: 560px;
   max-height: 80vh;
-  max-height: 80svh; */
+  max-height: 80vh; */
   padding-top: 6.1rem;
   background-color: var(--paper);
   overflow: hidden;
@@ -778,7 +778,7 @@ h1 {
   grid-template-columns: minmax(220px, 0.86fr) minmax(280px, 1fr);
   gap: clamp(1.2rem, 3vw, 2.2rem);
   width: min(860px, 100%);
-  max-height: min(760px, calc(100svh - 2rem));
+  max-height: min(760px, calc(100vh - 2rem));
   overflow: auto;
   padding: clamp(1rem, 3vw, 1.6rem);
   background: var(--paper-soft);
@@ -1258,20 +1258,20 @@ h1 {
   .hero {
     flex-direction: column;
     aspect-ratio: auto;
-    min-height: 80svh;
+    min-height: 80vh;
     padding-top: 4.2rem;
   }
 
   .hero-content {
     flex: 0 0 auto;
     justify-content: flex-start;
-    padding: clamp(1.4rem, 5.2svh, 2.4rem) var(--side) clamp(1rem, 4svh, 1.8rem);
+    padding: clamp(1.4rem, 5vw, 2.4rem) var(--side) clamp(1rem, 3.5vw, 1.8rem);
   }
 
   .hero-media {
     flex: 1 1 auto;
     width: 100%;
-    min-height: clamp(250px, 42svh, 420px);
+    min-height: clamp(250px, 35vw, 420px);
   }
 
   .hero-media::before {
@@ -1396,7 +1396,7 @@ h1 {
 @media (min-width: 981px) and (orientation: portrait) {
   .hero {
     max-height: 60vh;
-    max-height: 60svh;
+    max-height: 60vh;
   }
 }
 
