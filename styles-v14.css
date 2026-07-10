@@ -8,8 +8,10 @@
   --line: rgba(95, 72, 52, 0.18);
   --gold-line: rgba(212, 175, 55, 0.64);
   --gold-solid: #d4a017;
+  --serif-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
   --serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
-  --sans: "Inter", Arial, sans-serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --label: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   --side: clamp(1rem, 5vw, 4.5rem);
 }
 
@@ -155,8 +157,8 @@ a {
   border-radius: 0;
   background: transparent;
   color: var(--ink);
-  font: 700 0.68rem/1 var(--sans);
-  letter-spacing: 0.16em;
+  font: 600 0.7rem/1 var(--label);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -240,16 +242,16 @@ a {
 h1,
 h2,
 h3 {
-  font-family: var(--serif);
-  font-weight: 500;
-  letter-spacing: 0;
+  font-family: var(--serif-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 h1 {
   margin: 0 0 1.25rem;
   color: var(--ink);
   font-size: clamp(3.05rem, 4.45vw, 5.55rem);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 0.98;
   text-wrap: balance;
 }
@@ -300,20 +302,36 @@ h1 {
 }
 
 .section-kicker,
-.perfume-kicker,
+.perfume-kicker {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto 1.6rem;
+  padding-bottom: 0.7rem;
+  color: var(--muted);
+  font-family: var(--serif-display);
+  font-size: clamp(1.15rem, 1.6vw, 1.5rem);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--gold-line);
+}
+
 .eyebrow {
   display: block;
   width: max-content;
   max-width: 100%;
   margin: 0 auto 1.45rem;
   padding-bottom: 0.72rem;
-  color: var(--ink);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.24em;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
   text-align: center;
   text-transform: uppercase;
-  border-bottom: 2px solid var(--gold-line);
+  border-bottom: 1px solid var(--gold-line);
 }
 
 .hero .eyebrow,
@@ -406,8 +424,8 @@ h1 {
   border-bottom: 2px solid var(--gold-line);
   background: transparent;
   color: var(--gold-solid);
-  font: 700 0.62rem/1 var(--sans);
-  letter-spacing: 0.15em;
+  font: 600 0.66rem/1 var(--label);
+  letter-spacing: 0.17em;
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -460,6 +478,7 @@ h1 {
 .footer-copy h2 {
   margin: 0 0 1.2rem;
   color: var(--ink);
+  font-family: var(--serif-display);
   font-size: clamp(2.1rem, 4vw, 4.1rem);
   font-weight: 400;
   line-height: 1.02;
@@ -469,11 +488,13 @@ h1 {
 .section-heading p,
 .contact-panel p,
 .footer-copy p {
-  max-width: 760px;
-  margin: 0 0 1rem;
+  max-width: 720px;
+  margin: 0 0 1.1rem;
   color: var(--muted);
-  font-size: clamp(0.98rem, 1.15vw, 1.1rem);
-  line-height: 1.75;
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 1.2vw, 1.22rem);
+  font-weight: 500;
+  line-height: 1.78;
 }
 
 .split-copy > h2:not(.story-title),
@@ -511,12 +532,12 @@ h1 {
 
 .poetic-roadmap .section-heading {
   max-width: 760px;
-  text-align: left;
+  text-align: center;
 }
 
 .poetic-roadmap .section-heading .eyebrow {
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .poetic-roadmap .memory-path {
@@ -579,8 +600,8 @@ h1 {
 }
 
 .testimonials {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: clamp(2.4rem, 5vw, 4.2rem);
+  padding-bottom: clamp(2.4rem, 5vw, 4.2rem);
   background: var(--paper-warm);
 }
 
@@ -1001,10 +1022,10 @@ h1 {
   }
 
   .brand-name {
-    font-family: var(--sans);
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 0.16em;
+    font-family: var(--serif-display);
+    font-size: 0.92rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
   }
 
   .header-button {
